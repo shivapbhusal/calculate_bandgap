@@ -17,7 +17,8 @@ doscarFile=open(sys.argv[1])
 
 for lines in doscarFile:
     lines=lines.strip().split('  ')
-    print(lines)
-    print(stringToFloat(lines[1]))
+    if float(lines[0])>=-3 and float(lines[0])<=3:
+        
+        print(stringToFloat(lines[1]))
 
 doscarFile.close()
