@@ -11,11 +11,13 @@ python compute_bandgap.py doscar
 
 # Getting the plot 
 
+This program also takes doscar file as the only argument.
+
 ```shell
 python plot.py doscar
 ```
 
 # Contributors:
-* Shiva Bhusal 
-* Aneer Lamichhane
+* Shiva Bhusal: [civabhusal@gmail.com](civabhusal@gmail.com) 
+* Aneer Lamichhane[lamicha@bgsu.edu](lamicha@bgsu.edu)
 
