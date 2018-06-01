@@ -1,8 +1,15 @@
 '''
 A python script to compute bandgap in zinc oxide
+Requires 1 argument in command line. 
+Example, python compute_bandgap doscar
 '''
 
 import sys
+
+'''
+Function to convert numbers in E+ and E- exponential format to 
+normal floating point numbers. 
+'''
 
 def stringToFloat(myStr):
     if 'E+' in myStr:
@@ -15,8 +22,16 @@ def stringToFloat(myStr):
         return float(myStr)
 
 doscarFile=open(sys.argv[1])
-result=[]
+result=[] # List to keep the result
 is_zero=False
+
+'''
+Reads each lines from the Doscar file, filtres out the lines with first column in the range -3 to 3. 
+For each of these lines, finds the first occurance of 0 in the 2nd column
+Appends the result until it finds the first occurance of non-zero. 
+Appends the first first occurance of non-zero. 
+The loop stops. 
+'''
 for lines in doscarFile:
     lines=lines.strip().split('  ')
     if stringToFloat(lines[0])>=-3 and stringToFloat(lines[0])<=3:
@@ -24,7 +39,7 @@ for lines in doscarFile:
             result.append([stringToFloat(lines[0]),stringToFloat(lines[1])])
             is_zero=True
         if is_zero==True:
-            print('Y values are 0')
+            print('Y is 0')
             if stringToFloat(lines[1])!=0:
                 print('Stop here. This is the first occurance of non-zero')
                 result.append([stringToFloat(lines[0]),stringToFloat(lines[1])])
@@ -37,6 +52,6 @@ print(result) #Resulting Bandgap in the form of a list
 start=result[0][0]
 end=result[len(result)-1][0]
 
-bandgap=end-start
+bandgap=end-start 
 
 print('BandGap: ' +str(bandgap))
