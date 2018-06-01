@@ -2,6 +2,8 @@
 A python script to compute bandgap in zinc oxide
 Requires 1 argument in command line. 
 Example, python compute_bandgap doscar
+
+Created by: Shiva Bhusal, Aneer Lamichhane. 
 '''
 
 import sys
