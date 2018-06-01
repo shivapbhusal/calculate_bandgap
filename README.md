@@ -18,6 +18,6 @@ python plot.py doscar
 ```
 
 # Contributors:
-* Shiva Bhusal: [civabhusal@gmail.com](civabhusal@gmail.com) 
-* Aneer Lamichhane[lamicha@bgsu.edu](lamicha@bgsu.edu)
+* [Shiva Bhusal](civabhusal@gmail.com) 
+* [Aneer Lamichhane](lamicha@bgsu.edu)
 
