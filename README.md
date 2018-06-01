@@ -15,3 +15,7 @@ python compute_bandgap.py doscar
 python plot.py doscar
 ```
 
+# Contributors:
+* Shiva Bhusal 
+* Aneer Lamichhane
+
