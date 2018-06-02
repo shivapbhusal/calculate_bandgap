@@ -6,13 +6,20 @@ myStr='abcdxxxmox'
 
 is_zero=False
 
+resultList=[]
 for letter in myStr:
+    if letter!='x':
+        before=letter
     if letter=='x':
-        print(letter)
+        if len(resultList)==0:
+            resultList.append(before)
+        resultList.append(letter)
         is_zero=True
 
     if is_zero==True:
         if letter!='x':
-            print(letter)
+            resultList.append(letter)
             break
+
+print(resultList)
         
