@@ -1,8 +1,8 @@
 '''
 A string equivalent series of BandGap
 '''
-
-myStr='abcdxxxmox' 
+import sys
+myStr=sys.argv[1] 
 
 is_zero=False
 
