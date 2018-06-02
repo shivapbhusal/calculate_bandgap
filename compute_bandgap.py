@@ -37,7 +37,11 @@ The loop stops.
 for lines in doscarFile:
     lines=lines.strip().split('  ')
     if stringToFloat(lines[0])>=-3 and stringToFloat(lines[0])<=3: #Modify this line to customize the band size.
+        if stringToFloat(lines[1])!=0:
+            before = [stringToFloat(lines[0]),stringToFloat(lines[1])]
         if stringToFloat(lines[1])==0:
+            if len(result)==0:
+                result.append(before)
             result.append([stringToFloat(lines[0]),stringToFloat(lines[1])])
             is_zero=True
         if is_zero==True:
