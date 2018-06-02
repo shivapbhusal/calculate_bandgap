@@ -55,7 +55,7 @@ gapList=[]
 for series in seriesList:
     start=series[0][0]
     end=series[len(series)-1][0]
-    gapList.append(end-start)
-
-print(gapList)
+    gap=end-start
+    gapList.append(gap) #In case, list is needed in the future. 
+    print('Start:' +str(start)+' End:'+str(end)+' Gap:'+str(gap))
 
