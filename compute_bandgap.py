@@ -1,7 +1,7 @@
 '''
 A python script to compute bandgap in zinc oxide
-Requires 1 argument in command line. 
-Example, python compute_bandgap doscar
+Requires 3 argument in command line: doscar file, series_begin and series_end 
+Example, python compute_bandgap doscar 0 10
 
 Created by: Shiva Bhusal, Aneer Lamichhane. 
 '''
@@ -27,6 +27,9 @@ doscarFile=open(sys.argv[1])
 result=[] # List to keep the result
 is_zero=False
 
+series_begin=stringToFloat(sys.argv[2])
+series_end=stringToFloat(sys.argv[3])
+
 '''
 Reads each lines from the Doscar file, filtres out the lines with first column in the range -3 to 3. 
 For each of these lines, finds the first occurance of 0 in the 2nd column
@@ -36,7 +39,7 @@ The loop stops.
 '''
 for lines in doscarFile:
     lines=lines.strip().split('  ')
-    if stringToFloat(lines[0])>=-3 and stringToFloat(lines[0])<=3: #Modify this line to customize the band size.
+    if stringToFloat(lines[0])>=series_begin and stringToFloat(lines[0])<=series_end: #Modify this line to customize the band size.
         if stringToFloat(lines[1])!=0:
             before = [stringToFloat(lines[0]),stringToFloat(lines[1])]
         if stringToFloat(lines[1])==0:
@@ -55,7 +58,7 @@ doscarFile.close()
 print("Bandgap Series")
 print(result) #Resulting Bandgap in the form of a list
 
-start=result[0][0]
+start=result[1][0]
 end=result[len(result)-1][0]
 
 bandgap=end-start 
