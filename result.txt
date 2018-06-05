@@ -1,0 +1,30 @@
+dos/DOSCAR_ONE
+Total Gaps:6
+Start:-20.0 End:-16.919 Gap:3.081
+Start:-15.945 End:-5.168 Gap:10.777
+Start:-5.088 End:-5.062 Gap:0.026
+Start:-3.488 End:-3.474 Gap:0.014
+Start:1.154 End:1.167 Gap:0.013
+Start:1.661 End:2.581 Gap:0.92
+dos/DOSCAR_PURE
+Total Gaps:4
+Start:-20.0 End:-16.892 Gap:3.108
+Start:-15.999 End:-4.928 Gap:11.071
+Start:-3.555 End:-3.515 Gap:0.04
+Start:1.114 End:1.901 Gap:0.787
+dos/DOSCAR_TWO
+Total Gaps:7
+Start:-20.0 End:-16.999 Gap:3.001
+Start:-16.879 End:-16.866 Gap:0.013
+Start:-15.932 End:-5.288 Gap:10.644
+Start:-5.208 End:-5.195 Gap:0.013
+Start:-5.022 End:-5.008 Gap:0.014
+Start:-4.982 End:-4.968 Gap:0.014
+Start:1.18 End:1.794 Gap:0.614
+dos/DOSCAR_ZERO
+Total Gaps:5
+Start:-20.0 End:-16.866 Gap:3.134
+Start:-15.959 End:-5.155 Gap:10.804
+Start:-5.088 End:-4.995 Gap:0.093
+Start:-3.515 End:-3.501 Gap:0.014
+Start:1.114 End:2.394 Gap:1.28
