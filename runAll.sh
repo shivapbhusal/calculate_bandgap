@@ -3,6 +3,6 @@
 for entry in $1/*
 do 
 	echo $entry;
-	python compute_allGap.py $entry	
+	python compute_allGap_robust.py $entry	
 
 done
