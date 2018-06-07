@@ -1,16 +1,28 @@
-var http =require('http'); 
-var fs = require('fs'); 
+var formidable = require('formidable'),
+    http = require('http'),
+    util = require('util');
 
-function onRequest(request,response) {
-	response.writeHead(200,{'Content-Type':'text/html'}); 
-	fs.readFile('./index.html',null, function(error, data){
-		if (error){
-			response.writeHead(404); 
-			response.write('File not found'); 
-		}else {
-			response.write(data); 
-		}
-		response.end(); 
-	}); 
-}
-http.createServer(onRequest).listen(8000);
+http.createServer(function(req, res) {
+  if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
+    // parse a file upload
+    var form = new formidable.IncomingForm();
+
+    form.parse(req, function(err, fields, files) {
+      res.writeHead(200, {'content-type': 'text/plain'});
+      res.write('received upload:\n\n');
+      res.end(util.inspect({fields: fields, files: files}));
+    });
+
+    return;
+  }
+
+  // show a file upload form
+  res.writeHead(200, {'content-type': 'text/html'});
+  res.end(
+    '<form action="/upload" enctype="multipart/form-data" method="post">'+
+    '<input type="text" name="title"><br>'+
+    '<input type="file" name="upload" multiple="multiple"><br>'+
+    '<input type="submit" value="Upload">'+
+    '</form>'
+  );
+}).listen(8080);
